@@ -1,7 +1,7 @@
 <!DOCTYPE html>
-<!-- saved from url=(0078)file:///C:/Users/Administrator/Downloads/surgical-instrument-dashboard_12.html -->
-<html lang="ko"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
 <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
 <meta http-equiv="Pragma" content="no-cache">
 <meta http-equiv="Expires" content="0">
@@ -322,21 +322,21 @@
       </div>
     </div>
 
-    <div class="nav-item active" id="nav-main" onclick="switchView(&#39;dashboard&#39;)"><span class="ic">🏠</span>메인화면</div>
+    <div class="nav-item active" id="nav-main" onclick="switchView('dashboard')"><span class="ic">🏠</span>메인화면</div>
 
     <div class="nav-section">기구 관리</div>
-    <div class="nav-item" id="nav-instrument" onclick="switchView(&#39;instrument&#39;)"><span class="ic">🗂️</span>기구 현황</div>
-    <div class="nav-item" id="nav-repair" onclick="switchView(&#39;repair&#39;)"><span class="ic">🔧</span>수리 진행현황</div>
-    <div class="nav-item" id="nav-disposal" onclick="switchView(&#39;disposal&#39;)"><span class="ic">🗑️</span>폐품 진행현황</div>
-    <div class="nav-item" id="nav-surcharge" onclick="switchView(&#39;surcharge&#39;)"><span class="ic">➕</span>증량 청구현황</div>
-    <div class="nav-item" id="nav-inventory" onclick="switchView(&#39;inventory&#39;)"><span class="ic">📦</span>재고 현황</div>
+    <div class="nav-item" id="nav-instrument" onclick="switchView('instrument')"><span class="ic">🗂️</span>기구 현황</div>
+    <div class="nav-item" id="nav-repair" onclick="switchView('repair')"><span class="ic">🔧</span>수리 진행현황</div>
+    <div class="nav-item" id="nav-disposal" onclick="switchView('disposal')"><span class="ic">🗑️</span>폐품 진행현황</div>
+    <div class="nav-item" id="nav-surcharge" onclick="switchView('surcharge')"><span class="ic">➕</span>증량 청구현황</div>
+    <div class="nav-item" id="nav-inventory" onclick="switchView('inventory')"><span class="ic">📦</span>재고 현황</div>
 
     <div class="nav-section">통계 / 보고서</div>
-    <div class="nav-item" id="nav-analysis" onclick="switchView(&#39;analysis&#39;)"><span class="ic">📈</span>현황 분석</div>
+    <div class="nav-item" id="nav-analysis" onclick="switchView('analysis')"><span class="ic">📈</span>현황 분석</div>
 
     <div class="nav-section">시스템 관리</div>
-    <div class="nav-item" id="nav-users" onclick="switchView(&#39;users&#39;)"><span class="ic">👥</span>사용자 관리</div>
-    <div class="nav-item" id="nav-settings" onclick="switchView(&#39;settings&#39;)"><span class="ic">⚙️</span>시스템 설정</div>
+    <div class="nav-item" id="nav-users" onclick="switchView('users')"><span class="ic">👥</span>사용자 관리</div>
+    <div class="nav-item" id="nav-settings" onclick="switchView('settings')"><span class="ic">⚙️</span>시스템 설정</div>
   </div>
 
   <!-- ===================== MAIN ===================== -->
@@ -349,15 +349,17 @@
         <div style="position:relative;">
           <div class="icon-btn" id="alarmBellBtn" title="1개월 초과 지연 수리 알림" style="cursor:pointer;">🔔<span class="dot" id="alarmBellCount" style="display:none;">0</span></div>
           <div id="alarmDropdown" style="display:none;position:absolute;top:42px;right:0;width:340px;max-height:420px;overflow-y:auto;background:#fff;border:1px solid var(--border);border-radius:12px;box-shadow:0 8px 24px rgba(0,0,0,0.12);z-index:50;padding:10px;">
-            <select id="alarmDeptFilter" style="width:100%;padding:8px 10px;border:1px solid var(--border);border-radius:8px;font-size:12.5px;margin-bottom:8px;"><option value="">내 진료과 선택 (전체 보기)</option><option value="GS">GS</option><option value="NS">NS</option><option value="OS">OS</option><option value="CS">CS</option><option value="PS">PS</option><option value="EY">EY</option><option value="OB">OB</option><option value="URO">URO</option><option value="ENT">ENT</option><option value="DN">DN</option><option value="공용">공용</option><option value="Robot">Robot</option></select>
+            <select id="alarmDeptFilter" style="width:100%;padding:8px 10px;border:1px solid var(--border);border-radius:8px;font-size:12.5px;margin-bottom:8px;">
+              <option value="">내 진료과 선택 (전체 보기)</option>
+            </select>
             <div id="alarmDeptBreakdown" style="display:flex;flex-wrap:wrap;gap:6px;margin-bottom:10px;"></div>
             <div id="alarmListBody"></div>
-            <div id="alarmEmptyMsg" style="text-align: center; padding: 16px 0px; color: var(--text-sub); font-size: 12.5px;">지연된 수리 건이 없습니다.</div>
+            <div id="alarmEmptyMsg" style="display:none;text-align:center;padding:16px 0;color:var(--text-sub);font-size:12.5px;">지연된 수리 건이 없습니다.</div>
           </div>
         </div>
         <button id="loadDemoBtn" style="background:#fff;border:1px solid var(--border);color:var(--text);font-weight:700;font-size:12.5px;padding:8px 14px;border-radius:9px;cursor:pointer;">🧪 데모 데이터 불러오기</button>
-        <div class="icon-btn" id="refreshBtn" onclick="refreshMainDashboard()" title="새로고침" style="cursor: pointer; transition: none; transform: rotate(0deg);">🔄</div>
-        <span id="lastUpdatedLabel">최근 업데이트: 2026.08.05 07:36</span>
+        <div class="icon-btn" id="refreshBtn" onclick="refreshMainDashboard()" title="새로고침" style="cursor:pointer;">🔄</div>
+        <span id="lastUpdatedLabel">최근 업데이트: -</span>
         <div class="date-range">📅 2025.07.16 ~ 2025.07.23 ⌄</div>
       </div>
     </div>
@@ -371,7 +373,7 @@
               <div class="kpi-icon" style="background:var(--blue)">🗂️</div>
               <div class="kpi-label">전체 수술기구 수</div>
             </div>
-            <div class="kpi-value" id="kpiTotalQty" style="font-size:24px;margin-bottom:0;">0</div>
+            <div class="kpi-value" id="kpiTotalQty" style="font-size:24px;margin-bottom:0;">-</div>
           </div>
         </div>
         <div class="kpi-card" style="flex:1;padding:14px 18px;">
@@ -380,7 +382,7 @@
               <div class="kpi-icon" style="background:var(--orange)">🛠️</div>
               <div class="kpi-label">수리 중</div>
             </div>
-            <div class="kpi-value" id="kpiRepairQty" style="font-size:24px;margin-bottom:0;">0</div>
+            <div class="kpi-value" id="kpiRepairQty" style="font-size:24px;margin-bottom:0;">-</div>
           </div>
         </div>
         <div class="kpi-card" style="flex:1;padding:14px 18px;">
@@ -389,17 +391,17 @@
               <div class="kpi-icon" style="background:var(--purple)">🗑️</div>
               <div class="kpi-label">폐기 예정</div>
             </div>
-            <div class="kpi-value" id="kpiDisposalQty" style="font-size:24px;margin-bottom:0;">0</div>
+            <div class="kpi-value" id="kpiDisposalQty" style="font-size:24px;margin-bottom:0;">-</div>
           </div>
         </div>
       </div>
       <div class="panel" style="display:flex;flex-direction:column;justify-content:center;">
         <div class="panel-head"><h2>수술과별 기구 현황</h2><span class="see-all" id="deptDonutInfo"></span></div>
         <div class="donut-wrap">
-          <div class="donut" id="deptDonut" style="background: var(--gray);">
-            <div class="donut-hole"><div class="n" id="deptDonutTotal">0</div><div class="l">개</div></div>
+          <div class="donut" id="deptDonut" style="background:conic-gradient(var(--gray) 0% 100%);">
+            <div class="donut-hole"><div class="n" id="deptDonutTotal">-</div><div class="l">개</div></div>
           </div>
-          <div class="legend" id="deptLegend"><div class="legend-item"><span class="name">업로드된 기구 데이터가 없습니다</span></div></div>
+          <div class="legend" id="deptLegend"></div>
         </div>
       </div>
     </div>
@@ -492,15 +494,15 @@
           <tr>
             <td style="font-weight:700;border-top:2px solid var(--border);">합계</td>
             <td id="spendTotalCount" style="font-weight:700;border-top:2px solid var(--border);">0</td>
-            <td id="spendTotalInit" style="font-weight:700;border-top:2px solid var(--border);">0원</td>
-            <td id="spendTotalAmount" style="font-weight:700;border-top:2px solid var(--border);">0원</td>
-            <td id="spendTotalSaved" style="font-weight:700;border-top:2px solid var(--border);">0원</td>
-            <td id="spendTotalNego" style="font-weight:700;border-top:2px solid var(--border);">0.0%</td>
+            <td id="spendTotalInit" style="font-weight:700;border-top:2px solid var(--border);">0</td>
+            <td id="spendTotalAmount" style="font-weight:700;border-top:2px solid var(--border);">0</td>
+            <td id="spendTotalSaved" style="font-weight:700;border-top:2px solid var(--border);">0</td>
+            <td id="spendTotalNego" style="font-weight:700;border-top:2px solid var(--border);">0</td>
           </tr>
         </tfoot>
       </table>
       </div>
-      <div id="spendEmptyState" style="text-align: center; padding: 30px 0px; color: var(--text-sub); font-size: 13px;">
+      <div id="spendEmptyState" style="display:none;text-align:center;padding:30px 0;color:var(--text-sub);font-size:13px;">
         집계할 외주수리 지출 데이터가 없습니다 (수리 관리에서 작업구분=외주, 계산서발행일자가 입력된 건 기준).
       </div>
     </div>
@@ -512,7 +514,7 @@
     <div class="topbar">
       <h1>기구 현황 <span class="scope-badge">전체 기구 리스트</span></h1>
       <div class="top-right">
-        <span id="instrumentCount" style="font-weight:700;color:var(--text);">총 0건</span>
+        <span id="instrumentCount" style="font-weight:700;color:var(--text);"></span>
       </div>
     </div>
 
@@ -545,15 +547,22 @@
           <span class="see-all" id="filterInfo"></span>
         </div>
         <div class="set-photo-box disabled" id="setPhotoBox">
-          <label id="setPhotoLabel" style="display: flex;">📷<br><span style="font-size:9.5px;">진료과·세트<br>선택 필요</span><input type="file" id="setPhotoInput" accept="image/*" style="display:none;" disabled=""></label>
+          <label id="setPhotoLabel">
+            📷<br>사진 업로드
+            <input type="file" id="setPhotoInput" accept="image/*" style="display:none;">
+          </label>
           <img id="setPhotoPreview" style="display:none;">
           <div class="remove-photo" id="removeSetPhoto" style="display:none;">✕</div>
         </div>
       </div>
 
       <div style="display:flex;align-items:center;gap:8px;margin-bottom:14px;">
-        <select id="filterDept" style="padding:9px 14px;border:1px solid var(--border);border-radius:9px;font-size:13px;background:#fff;min-width:140px;"><option value="">진료과 선택</option><option value="GS">GS</option><option value="NS">NS</option><option value="OS">OS</option><option value="CS">CS</option><option value="PS">PS</option><option value="EY">EY</option><option value="OB">OB</option><option value="URO">URO</option><option value="ENT">ENT</option><option value="DN">DN</option><option value="공용">공용</option><option value="Robot">Robot</option></select>
-        <select id="filterSet" disabled="" style="padding: 9px 14px; border: 1px solid var(--border); border-radius: 9px; font-size: 13px; background: rgb(243, 245, 249); min-width: 160px; cursor: not-allowed;"><option value="">세트명 선택</option></select>
+        <select id="filterDept" style="padding:9px 14px;border:1px solid var(--border);border-radius:9px;font-size:13px;background:#fff;min-width:140px;">
+          <option value="">진료과 선택</option>
+        </select>
+        <select id="filterSet" disabled style="padding:9px 14px;border:1px solid var(--border);border-radius:9px;font-size:13px;background:#F3F5F9;min-width:160px;">
+          <option value="">세트명 선택</option>
+        </select>
         <span style="margin-left:auto;font-size:12px;color:#D6336C;font-weight:600;">⚠ 분홍색 기구 정보 확인 필요</span>
       </div>
 
@@ -575,7 +584,7 @@
         </tfoot>
       </table>
       </div>
-      <div id="emptyState" style="text-align: center; padding: 40px 0px; color: var(--text-sub); font-size: 13px;">
+      <div id="emptyState" style="display:none;text-align:center;padding:40px 0;color:var(--text-sub);font-size:13px;">
         업로드된 기구 리스트가 없습니다. 위에서 파일을 업로드하거나 직접 추가해주세요.
       </div>
     </div>
@@ -587,7 +596,7 @@
     <div class="topbar">
       <h1>수리 진행현황 <span class="scope-badge">전체 수리 이력</span></h1>
       <div class="top-right">
-        <span id="repairCount" style="font-weight:700;color:var(--text);">총 0건</span>
+        <span id="repairCount" style="font-weight:700;color:var(--text);"></span>
       </div>
     </div>
 
@@ -623,7 +632,9 @@
       </div>
 
       <div style="display:flex;align-items:center;gap:8px;margin-bottom:14px;flex-wrap:wrap;">
-        <select id="repairFilterDept" style="padding:9px 14px;border:1px solid var(--border);border-radius:9px;font-size:13px;background:#fff;min-width:140px;"><option value="">진료과 선택</option><option value="GS">GS</option><option value="NS">NS</option><option value="OS">OS</option><option value="CS">CS</option><option value="PS">PS</option><option value="EY">EY</option><option value="OB">OB</option><option value="URO">URO</option><option value="ENT">ENT</option><option value="DN">DN</option><option value="공용">공용</option><option value="Robot">Robot</option></select>
+        <select id="repairFilterDept" style="padding:9px 14px;border:1px solid var(--border);border-radius:9px;font-size:13px;background:#fff;min-width:140px;">
+          <option value="">진료과 선택</option>
+        </select>
         <select id="repairFilterStatus" style="padding:9px 14px;border:1px solid var(--border);border-radius:9px;font-size:13px;background:#fff;min-width:140px;">
           <option value="">상태 전체</option>
           <option value="진행중">진행중</option>
@@ -649,7 +660,7 @@
         </tfoot>
       </table>
       </div>
-      <div id="repairEmptyState" style="text-align: center; padding: 40px 0px; color: var(--text-sub); font-size: 13px;">
+      <div id="repairEmptyState" style="display:none;text-align:center;padding:40px 0;color:var(--text-sub);font-size:13px;">
         업로드된 수리 이력이 없습니다. 위에서 파일을 업로드하거나 직접 추가해주세요.
       </div>
     </div>
@@ -660,7 +671,7 @@
     <div class="topbar">
       <h1>폐품 진행현황 <span class="scope-badge">전체 폐기(폐품) 이력</span></h1>
       <div class="top-right">
-        <span id="disposalCount" style="font-weight:700;color:var(--text);">총 0건</span>
+        <span id="disposalCount" style="font-weight:700;color:var(--text);"></span>
       </div>
     </div>
 
@@ -695,7 +706,9 @@
       </div>
 
       <div style="display:flex;align-items:center;gap:8px;margin-bottom:14px;flex-wrap:wrap;">
-        <select id="disposalFilterDept" style="padding:9px 14px;border:1px solid var(--border);border-radius:9px;font-size:13px;background:#fff;min-width:140px;"><option value="">진료과 선택</option><option value="GS">GS</option><option value="NS">NS</option><option value="OS">OS</option><option value="CS">CS</option><option value="PS">PS</option><option value="EY">EY</option><option value="OB">OB</option><option value="URO">URO</option><option value="ENT">ENT</option><option value="DN">DN</option><option value="공용">공용</option><option value="Robot">Robot</option></select>
+        <select id="disposalFilterDept" style="padding:9px 14px;border:1px solid var(--border);border-radius:9px;font-size:13px;background:#fff;min-width:140px;">
+          <option value="">진료과 선택</option>
+        </select>
         <select id="disposalFilterStatus" style="padding:9px 14px;border:1px solid var(--border);border-radius:9px;font-size:13px;background:#fff;min-width:140px;">
           <option value="">상태 전체</option>
           <option value="진행중">진행중 (재청구 대기)</option>
@@ -720,7 +733,7 @@
         </tfoot>
       </table>
       </div>
-      <div id="disposalEmptyState" style="text-align: center; padding: 40px 0px; color: var(--text-sub); font-size: 13px;">
+      <div id="disposalEmptyState" style="display:none;text-align:center;padding:40px 0;color:var(--text-sub);font-size:13px;">
         업로드된 폐기 이력이 없습니다. 위에서 파일을 업로드하거나 직접 추가해주세요.
       </div>
     </div>
@@ -731,7 +744,7 @@
     <div class="topbar">
       <h1>재고 현황 <span class="scope-badge">수술실 보유 재고물품</span></h1>
       <div class="top-right">
-        <span id="inventoryCount" style="font-weight:700;color:var(--text);">총 0건</span>
+        <span id="inventoryCount" style="font-weight:700;color:var(--text);"></span>
       </div>
     </div>
 
@@ -778,7 +791,7 @@
         </tfoot>
       </table>
       </div>
-      <div id="inventoryEmptyState" style="text-align: center; padding: 40px 0px; color: var(--text-sub); font-size: 13px;">
+      <div id="inventoryEmptyState" style="display:none;text-align:center;padding:40px 0;color:var(--text-sub);font-size:13px;">
         등록된 재고물품이 없습니다. 위에서 파일을 업로드하거나 직접 추가해주세요.
       </div>
     </div>
@@ -789,7 +802,7 @@
     <div class="topbar">
       <h1>증량 청구현황 <span class="scope-badge">기구 수량 증량 요청 이력</span></h1>
       <div class="top-right">
-        <span id="surchargeCount" style="font-weight:700;color:var(--text);">총 0건</span>
+        <span id="surchargeCount" style="font-weight:700;color:var(--text);"></span>
       </div>
     </div>
 
@@ -835,7 +848,7 @@
         </tfoot>
       </table>
       </div>
-      <div id="surchargeEmptyState" style="text-align: center; padding: 40px 0px; color: var(--text-sub); font-size: 13px;">
+      <div id="surchargeEmptyState" style="display:none;text-align:center;padding:40px 0;color:var(--text-sub);font-size:13px;">
         등록된 증량 청구가 없습니다. 위에서 파일을 업로드하거나 직접 추가해주세요.
       </div>
     </div>
@@ -1016,7 +1029,7 @@
     <div class="topbar">
       <h1>사용자 관리 <span class="scope-badge">전체 사용자 및 권한</span></h1>
       <div class="top-right">
-        <span id="userCount" style="font-weight:700;color:var(--text);">총 0명</span>
+        <span id="userCount" style="font-weight:700;color:var(--text);"></span>
       </div>
     </div>
 
@@ -1069,7 +1082,7 @@
         </tfoot>
       </table>
       </div>
-      <div id="userEmptyState" style="text-align: center; padding: 40px 0px; color: var(--text-sub); font-size: 13px;">
+      <div id="userEmptyState" style="display:none;text-align:center;padding:40px 0;color:var(--text-sub);font-size:13px;">
         등록된 사용자가 없습니다. 위에서 파일을 업로드하거나 직접 추가해주세요.
       </div>
     </div>
@@ -1079,8 +1092,8 @@
   </div>
   <!-- /.main -->
 
-<script src="./index_files/xlsx.full.min.js.다운로드"></script>
-<script src="./index_files/exceljs.min.js.다운로드"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/exceljs/4.4.0/exceljs.min.js"></script>
 <script>
 // Claude.ai 아티팩트 환경이 아니면(window.storage 미존재) localStorage 기반으로 대체 구현
 // -> 브라우저에서 이 HTML 파일을 직접 열어도 데이터가 유지됩니다.
@@ -1187,20 +1200,7 @@ if(!window.storage){
     });
   };
 })();
-</script><div id="customConfirmOverlay" style="display: none; position: fixed; inset: 0px; background: rgba(11, 27, 58, 0.45); z-index: 99999; align-items: center; justify-content: center;">
-    <div style="background:#fff;border-radius:14px;padding:22px 24px;max-width:400px;width:90%;box-shadow:0 12px 40px rgba(0,0,0,0.25);">
-      <div id="customConfirmMsg" style="font-size:13.5px;color:#1A1F36;white-space:pre-line;line-height:1.6;margin-bottom:20px;"></div>
-      <div style="display:flex;gap:8px;justify-content:flex-end;">
-        <button id="customConfirmCancel" type="button" style="padding:9px 16px;border-radius:8px;border:1px solid #E5E7EB;background:#fff;color:#1A1F36;font-weight:700;font-size:13px;cursor:pointer;">취소</button>
-        <button id="customConfirmOk" type="button" style="padding:9px 16px;border-radius:8px;border:none;background:#F0506E;color:#fff;font-weight:700;font-size:13px;cursor:pointer;">확인</button>
-      </div>
-    </div></div><div id="customAlertOverlay" style="display: none; position: fixed; inset: 0px; background: rgba(11, 27, 58, 0.45); z-index: 99999; align-items: center; justify-content: center;">
-    <div style="background:#fff;border-radius:14px;padding:22px 24px;max-width:400px;width:90%;box-shadow:0 12px 40px rgba(0,0,0,0.25);">
-      <div id="customAlertMsg" style="font-size:13.5px;color:#1A1F36;white-space:pre-line;line-height:1.6;margin-bottom:20px;"></div>
-      <div style="display:flex;justify-content:flex-end;">
-        <button id="customAlertOk" type="button" style="padding:9px 20px;border-radius:8px;border:none;background:#2F6FED;color:#fff;font-weight:700;font-size:13px;cursor:pointer;">확인</button>
-      </div>
-    </div></div>
+</script>
 
 <script>
 // ---- 전역 시스템 설정 (시스템 설정 화면에서 관리) ----
@@ -4097,6 +4097,5 @@ if(!window.storage){
 })();
 </script>
 
-
-
-</body></html>
+</body>
+</html>
