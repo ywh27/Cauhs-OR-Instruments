@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!-- saved from url=(0077)file:///C:/Users/Administrator/Downloads/surgical-instrument-dashboard_8.html -->
+<!-- saved from url=(0077)file:///C:/Users/Administrator/Downloads/surgical-instrument-dashboard_9.html -->
 <html lang="ko"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
 <title>수술실 기구 관리 대시보드</title>
@@ -354,7 +354,7 @@
         </div>
         <button id="loadDemoBtn" style="background:#fff;border:1px solid var(--border);color:var(--text);font-weight:700;font-size:12.5px;padding:8px 14px;border-radius:9px;cursor:pointer;">🧪 데모 데이터 불러오기</button>
         <div class="icon-btn" id="refreshBtn" onclick="refreshMainDashboard()" title="새로고침" style="cursor: pointer; transition: none; transform: rotate(0deg);">🔄</div>
-        <span id="lastUpdatedLabel">최근 업데이트: 2026.08.04 16:13</span>
+        <span id="lastUpdatedLabel">최근 업데이트: 2026.08.04 16:23</span>
         <div class="date-range">📅 2025.07.16 ~ 2025.07.23 ⌄</div>
       </div>
     </div>
@@ -368,7 +368,7 @@
               <div class="kpi-icon" style="background:var(--blue)">🗂️</div>
               <div class="kpi-label">전체 수술기구 수</div>
             </div>
-            <div class="kpi-value" id="kpiTotalQty" style="font-size:24px;margin-bottom:0;">56</div>
+            <div class="kpi-value" id="kpiTotalQty" style="font-size:24px;margin-bottom:0;">0</div>
           </div>
         </div>
         <div class="kpi-card" style="flex:1;padding:14px 18px;">
@@ -377,7 +377,7 @@
               <div class="kpi-icon" style="background:var(--orange)">🛠️</div>
               <div class="kpi-label">수리 중</div>
             </div>
-            <div class="kpi-value" id="kpiRepairQty" style="font-size:24px;margin-bottom:0;">5</div>
+            <div class="kpi-value" id="kpiRepairQty" style="font-size:24px;margin-bottom:0;">0</div>
           </div>
         </div>
         <div class="kpi-card" style="flex:1;padding:14px 18px;">
@@ -386,17 +386,17 @@
               <div class="kpi-icon" style="background:var(--purple)">🗑️</div>
               <div class="kpi-label">폐기 예정</div>
             </div>
-            <div class="kpi-value" id="kpiDisposalQty" style="font-size:24px;margin-bottom:0;">2</div>
+            <div class="kpi-value" id="kpiDisposalQty" style="font-size:24px;margin-bottom:0;">0</div>
           </div>
         </div>
       </div>
       <div class="panel" style="display:flex;flex-direction:column;justify-content:center;">
-        <div class="panel-head"><h2>수술과별 기구 현황</h2><span class="see-all" id="deptDonutInfo">10개 진료과</span></div>
+        <div class="panel-head"><h2>수술과별 기구 현황</h2><span class="see-all" id="deptDonutInfo"></span></div>
         <div class="donut-wrap">
-          <div class="donut" id="deptDonut" style="background: conic-gradient(rgb(47, 111, 237) 0%, rgb(47, 111, 237) 26.79%, rgb(22, 169, 127) 26.79%, rgb(22, 169, 127) 44.64%, rgb(124, 92, 252) 44.64%, rgb(124, 92, 252) 57.14%, rgb(240, 80, 110) 57.14%, rgb(240, 80, 110) 67.86%, rgb(59, 91, 219) 67.86%, rgb(59, 91, 219) 76.79%, rgb(20, 184, 166) 76.79%, rgb(20, 184, 166) 83.93%, rgb(245, 148, 31) 83.93%, rgb(245, 148, 31) 89.29%, rgb(144, 97, 249) 89.29%, rgb(144, 97, 249) 92.86%, rgb(199, 204, 214) 92.86%, rgb(199, 204, 214) 96.43%, rgb(232, 89, 12) 96.43%, rgb(232, 89, 12) 100%);">
-            <div class="donut-hole"><div class="n" id="deptDonutTotal">56</div><div class="l">개</div></div>
+          <div class="donut" id="deptDonut" style="background: var(--gray);">
+            <div class="donut-hole"><div class="n" id="deptDonutTotal">0</div><div class="l">개</div></div>
           </div>
-          <div class="legend" id="deptLegend"><div class="legend-item"><span class="sw" style="background:#2F6FED"></span><span class="name">외과<span style="color:var(--text-sub);font-weight:400;"> (GS)</span></span><span class="val">15 (26.8%)</span></div><div class="legend-item"><span class="sw" style="background:#16A97F"></span><span class="name">공용<span style="color:var(--text-sub);font-weight:400;"> (공용)</span></span><span class="val">10 (17.9%)</span></div><div class="legend-item"><span class="sw" style="background:#7C5CFC"></span><span class="name">신경외과<span style="color:var(--text-sub);font-weight:400;"> (NS)</span></span><span class="val">7 (12.5%)</span></div><div class="legend-item"><span class="sw" style="background:#F0506E"></span><span class="name">정형외과<span style="color:var(--text-sub);font-weight:400;"> (OS)</span></span><span class="val">6 (10.7%)</span></div><div class="legend-item"><span class="sw" style="background:#3B5BDB"></span><span class="name">이비인후과<span style="color:var(--text-sub);font-weight:400;"> (ENT)</span></span><span class="val">5 (8.9%)</span></div><div class="legend-item"><span class="sw" style="background:#14B8A6"></span><span class="name">산부인과<span style="color:var(--text-sub);font-weight:400;"> (OB)</span></span><span class="val">4 (7.1%)</span></div><div class="legend-item"><span class="sw" style="background:#F5941F"></span><span class="name">성형외과<span style="color:var(--text-sub);font-weight:400;"> (PS)</span></span><span class="val">3 (5.4%)</span></div><div class="legend-item"><span class="sw" style="background:#9061F9"></span><span class="name">심장혈관흉부외과<span style="color:var(--text-sub);font-weight:400;"> (CS)</span></span><span class="val">2 (3.6%)</span></div><div class="legend-item"><span class="sw" style="background:#C7CCD6"></span><span class="name">비뇨의학과<span style="color:var(--text-sub);font-weight:400;"> (URO)</span></span><span class="val">2 (3.6%)</span></div><div class="legend-item"><span class="sw" style="background:#E8590C"></span><span class="name">로봇<span style="color:var(--text-sub);font-weight:400;"> (Robot)</span></span><span class="val">2 (3.6%)</span></div></div>
+          <div class="legend" id="deptLegend"><div class="legend-item"><span class="name">업로드된 기구 데이터가 없습니다</span></div></div>
         </div>
       </div>
     </div>
@@ -509,7 +509,7 @@
     <div class="topbar">
       <h1>기구 현황 <span class="scope-badge">전체 기구 리스트</span></h1>
       <div class="top-right">
-        <span id="instrumentCount" style="font-weight:700;color:var(--text);">총 13건</span>
+        <span id="instrumentCount" style="font-weight:700;color:var(--text);">총 0건</span>
       </div>
     </div>
 
@@ -561,213 +561,18 @@
             <th>진료과</th><th>세트명</th><th>물품코드</th><th>물품명</th><th>규격</th><th>모델명</th><th>제조사</th><th>기준수량</th><th>보유량</th><th>수리중</th><th>폐품중</th><th style="width:90px;">작업</th>
           </tr>
         </thead>
-        <tbody id="instrumentTableBody"><tr data-idx="0">
-          <td class="dept">GS</td>
-          <td>Single</td>
-          <td>U10000101</td>
-          <td>Gerald Forceps</td>
-          <td>20cm</td>
-          <td>L21XQS</td>
-          <td>V-mueller</td>
-          <td>5</td>
-          <td style="text-align:center;font-weight:700;">4</td>
-          <td style="text-align:center;"><span class="chip orange">1</span></td>
-          <td style="text-align:center;">0</td>
-          <td style="white-space:nowrap;">
-            <button data-action="edit" style="background:#fff;border:1px solid var(--border);border-radius:6px;padding:5px 8px;font-size:11.5px;font-weight:700;">수정</button>
-            <button data-action="delete" style="background:#fff;border:1px solid var(--border);color:var(--red);border-radius:6px;padding:5px 8px;font-size:11.5px;font-weight:700;">삭제</button>
-          </td></tr><tr data-idx="1">
-          <td class="dept">GS</td>
-          <td>Single</td>
-          <td>U10000102</td>
-          <td>Mayo Scissors</td>
-          <td>17cm</td>
-          <td>MS-14</td>
-          <td>V-mueller</td>
-          <td>8</td>
-          <td style="text-align:center;font-weight:700;">8</td>
-          <td style="text-align:center;">0</td>
-          <td style="text-align:center;">0</td>
-          <td style="white-space:nowrap;">
-            <button data-action="edit" style="background:#fff;border:1px solid var(--border);border-radius:6px;padding:5px 8px;font-size:11.5px;font-weight:700;">수정</button>
-            <button data-action="delete" style="background:#fff;border:1px solid var(--border);color:var(--red);border-radius:6px;padding:5px 8px;font-size:11.5px;font-weight:700;">삭제</button>
-          </td></tr><tr class="row-incomplete" data-idx="2">
-          <td class="dept">GS</td>
-          <td>Single</td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td>2</td>
-          <td style="text-align:center;font-weight:700;">2</td>
-          <td style="text-align:center;">0</td>
-          <td style="text-align:center;">0</td>
-          <td style="white-space:nowrap;">
-            <button data-action="edit" style="background:#fff;border:1px solid var(--border);border-radius:6px;padding:5px 8px;font-size:11.5px;font-weight:700;">수정</button>
-            <button data-action="delete" style="background:#fff;border:1px solid var(--border);color:var(--red);border-radius:6px;padding:5px 8px;font-size:11.5px;font-weight:700;">삭제</button>
-          </td></tr><tr data-idx="3">
-          <td class="dept">NS</td>
-          <td>Cranial #1</td>
-          <td>U10010201</td>
-          <td>Bipolar Forceps</td>
-          <td>Standard</td>
-          <td>BP-220</td>
-          <td>Aesculap</td>
-          <td>4</td>
-          <td style="text-align:center;font-weight:700;">3</td>
-          <td style="text-align:center;"><span class="chip orange">1</span></td>
-          <td style="text-align:center;">0</td>
-          <td style="white-space:nowrap;">
-            <button data-action="edit" style="background:#fff;border:1px solid var(--border);border-radius:6px;padding:5px 8px;font-size:11.5px;font-weight:700;">수정</button>
-            <button data-action="delete" style="background:#fff;border:1px solid var(--border);color:var(--red);border-radius:6px;padding:5px 8px;font-size:11.5px;font-weight:700;">삭제</button>
-          </td></tr><tr data-idx="4">
-          <td class="dept">NS</td>
-          <td>Cranial #1</td>
-          <td>U10010202</td>
-          <td>Micro Scissors</td>
-          <td>Straight</td>
-          <td>MC-15</td>
-          <td>Aesculap</td>
-          <td>3</td>
-          <td style="text-align:center;font-weight:700;">2</td>
-          <td style="text-align:center;">0</td>
-          <td style="text-align:center;"><span class="chip purple">1</span></td>
-          <td style="white-space:nowrap;">
-            <button data-action="edit" style="background:#fff;border:1px solid var(--border);border-radius:6px;padding:5px 8px;font-size:11.5px;font-weight:700;">수정</button>
-            <button data-action="delete" style="background:#fff;border:1px solid var(--border);color:var(--red);border-radius:6px;padding:5px 8px;font-size:11.5px;font-weight:700;">삭제</button>
-          </td></tr><tr data-idx="5">
-          <td class="dept">OS</td>
-          <td>Hand #6</td>
-          <td>U10020301</td>
-          <td>Bone Rongeur</td>
-          <td>Small</td>
-          <td>BR-77</td>
-          <td>Zimmer</td>
-          <td>6</td>
-          <td style="text-align:center;font-weight:700;">6</td>
-          <td style="text-align:center;">0</td>
-          <td style="text-align:center;">0</td>
-          <td style="white-space:nowrap;">
-            <button data-action="edit" style="background:#fff;border:1px solid var(--border);border-radius:6px;padding:5px 8px;font-size:11.5px;font-weight:700;">수정</button>
-            <button data-action="delete" style="background:#fff;border:1px solid var(--border);color:var(--red);border-radius:6px;padding:5px 8px;font-size:11.5px;font-weight:700;">삭제</button>
-          </td></tr><tr data-idx="6">
-          <td class="dept">CS</td>
-          <td>Vascular 2</td>
-          <td>U10030401</td>
-          <td>DeBakey Clamp</td>
-          <td>24.5cm</td>
-          <td>22-0898</td>
-          <td>GEISTER</td>
-          <td>2</td>
-          <td style="text-align:center;font-weight:700;">2</td>
-          <td style="text-align:center;">0</td>
-          <td style="text-align:center;">0</td>
-          <td style="white-space:nowrap;">
-            <button data-action="edit" style="background:#fff;border:1px solid var(--border);border-radius:6px;padding:5px 8px;font-size:11.5px;font-weight:700;">수정</button>
-            <button data-action="delete" style="background:#fff;border:1px solid var(--border);color:var(--red);border-radius:6px;padding:5px 8px;font-size:11.5px;font-weight:700;">삭제</button>
-          </td></tr><tr data-idx="7">
-          <td class="dept">PS</td>
-          <td>Rhinoplasty</td>
-          <td>U10040501</td>
-          <td>Cottle Elevator</td>
-          <td>Standard</td>
-          <td>CE-10</td>
-          <td>Karl Storz</td>
-          <td>3</td>
-          <td style="text-align:center;font-weight:700;">2</td>
-          <td style="text-align:center;">0</td>
-          <td style="text-align:center;"><span class="chip purple">1</span></td>
-          <td style="white-space:nowrap;">
-            <button data-action="edit" style="background:#fff;border:1px solid var(--border);border-radius:6px;padding:5px 8px;font-size:11.5px;font-weight:700;">수정</button>
-            <button data-action="delete" style="background:#fff;border:1px solid var(--border);color:var(--red);border-radius:6px;padding:5px 8px;font-size:11.5px;font-weight:700;">삭제</button>
-          </td></tr><tr data-idx="8">
-          <td class="dept">OB</td>
-          <td>Pelvic #2</td>
-          <td>U10050601</td>
-          <td>Uterine Forceps</td>
-          <td>30cm</td>
-          <td>UF-30</td>
-          <td>B.Braun</td>
-          <td>4</td>
-          <td style="text-align:center;font-weight:700;">4</td>
-          <td style="text-align:center;">0</td>
-          <td style="text-align:center;">0</td>
-          <td style="white-space:nowrap;">
-            <button data-action="edit" style="background:#fff;border:1px solid var(--border);border-radius:6px;padding:5px 8px;font-size:11.5px;font-weight:700;">수정</button>
-            <button data-action="delete" style="background:#fff;border:1px solid var(--border);color:var(--red);border-radius:6px;padding:5px 8px;font-size:11.5px;font-weight:700;">삭제</button>
-          </td></tr><tr data-idx="9">
-          <td class="dept">URO</td>
-          <td>TURP</td>
-          <td>U10060701</td>
-          <td>Resectoscope Sheath</td>
-          <td>24Fr</td>
-          <td>RS-24</td>
-          <td>Olympus</td>
-          <td>2</td>
-          <td style="text-align:center;font-weight:700;">1</td>
-          <td style="text-align:center;"><span class="chip orange">1</span></td>
-          <td style="text-align:center;">0</td>
-          <td style="white-space:nowrap;">
-            <button data-action="edit" style="background:#fff;border:1px solid var(--border);border-radius:6px;padding:5px 8px;font-size:11.5px;font-weight:700;">수정</button>
-            <button data-action="delete" style="background:#fff;border:1px solid var(--border);color:var(--red);border-radius:6px;padding:5px 8px;font-size:11.5px;font-weight:700;">삭제</button>
-          </td></tr><tr data-idx="10">
-          <td class="dept">ENT</td>
-          <td>Sinus</td>
-          <td>U10070801</td>
-          <td>Sinus Forceps</td>
-          <td>Standard</td>
-          <td>SF-12</td>
-          <td>Karl Storz</td>
-          <td>5</td>
-          <td style="text-align:center;font-weight:700;">4</td>
-          <td style="text-align:center;"><span class="chip orange">1</span></td>
-          <td style="text-align:center;">0</td>
-          <td style="white-space:nowrap;">
-            <button data-action="edit" style="background:#fff;border:1px solid var(--border);border-radius:6px;padding:5px 8px;font-size:11.5px;font-weight:700;">수정</button>
-            <button data-action="delete" style="background:#fff;border:1px solid var(--border);color:var(--red);border-radius:6px;padding:5px 8px;font-size:11.5px;font-weight:700;">삭제</button>
-          </td></tr><tr data-idx="11">
-          <td class="dept">Robot</td>
-          <td>Single</td>
-          <td>U10080901</td>
-          <td>Robotic Grasper</td>
-          <td>8mm</td>
-          <td>RG-8mm</td>
-          <td>Intuitive</td>
-          <td>2</td>
-          <td style="text-align:center;font-weight:700;">1</td>
-          <td style="text-align:center;"><span class="chip orange">1</span></td>
-          <td style="text-align:center;">0</td>
-          <td style="white-space:nowrap;">
-            <button data-action="edit" style="background:#fff;border:1px solid var(--border);border-radius:6px;padding:5px 8px;font-size:11.5px;font-weight:700;">수정</button>
-            <button data-action="delete" style="background:#fff;border:1px solid var(--border);color:var(--red);border-radius:6px;padding:5px 8px;font-size:11.5px;font-weight:700;">삭제</button>
-          </td></tr><tr data-idx="12">
-          <td class="dept">공용</td>
-          <td>General</td>
-          <td>U10090001</td>
-          <td>Basic Retractor</td>
-          <td>All Size</td>
-          <td>BR-100</td>
-          <td>Symmetry</td>
-          <td>10</td>
-          <td style="text-align:center;font-weight:700;">10</td>
-          <td style="text-align:center;">0</td>
-          <td style="text-align:center;">0</td>
-          <td style="white-space:nowrap;">
-            <button data-action="edit" style="background:#fff;border:1px solid var(--border);border-radius:6px;padding:5px 8px;font-size:11.5px;font-weight:700;">수정</button>
-            <button data-action="delete" style="background:#fff;border:1px solid var(--border);color:var(--red);border-radius:6px;padding:5px 8px;font-size:11.5px;font-weight:700;">삭제</button>
-          </td></tr></tbody>
+        <tbody id="instrumentTableBody"></tbody>
         <tfoot>
           <tr>
-            <td colspan="7" style="text-align:right;font-weight:700;border-top:2px solid var(--border);border-bottom:none;">총 (<span id="footTotalCount">13</span>)건 /</td>
-            <td style="text-align:center;font-weight:700;border-top:2px solid var(--border);border-bottom:none;">합계 (<span id="footQtySum">56</span>)</td>
+            <td colspan="7" style="text-align:right;font-weight:700;border-top:2px solid var(--border);border-bottom:none;">총 (<span id="footTotalCount">0</span>)건 /</td>
+            <td style="text-align:center;font-weight:700;border-top:2px solid var(--border);border-bottom:none;">합계 (<span id="footQtySum">0</span>)</td>
             <td colspan="3" style="border-top:2px solid var(--border);border-bottom:none;"></td>
             <td style="border-top:2px solid var(--border);border-bottom:none;"></td>
           </tr>
         </tfoot>
       </table>
       </div>
-      <div id="emptyState" style="display:none;text-align:center;padding:40px 0;color:var(--text-sub);font-size:13px;">
+      <div id="emptyState" style="text-align: center; padding: 40px 0px; color: var(--text-sub); font-size: 13px;">
         업로드된 기구 리스트가 없습니다. 위에서 파일을 업로드하거나 직접 추가해주세요.
       </div>
     </div>
@@ -779,7 +584,7 @@
     <div class="topbar">
       <h1>수리 진행현황 <span class="scope-badge">전체 수리 이력</span></h1>
       <div class="top-right">
-        <span id="repairCount" style="font-weight:700;color:var(--text);">총 9건</span>
+        <span id="repairCount" style="font-weight:700;color:var(--text);">총 0건</span>
       </div>
     </div>
 
@@ -833,195 +638,15 @@
             <th>상태</th><th>NO.</th><th>접수번호</th><th>문서번호</th><th>접수자</th><th>물품코드</th><th>진료과</th><th>세트명</th><th>물품명</th><th>모델명</th><th>제조사</th><th>접수일자</th><th>작업구분</th><th>반출일자</th><th>완료일자</th><th>폐품일자</th><th class="cost-th" style="display:none;">초기견적</th><th class="cost-th" style="display:none;">최종견적</th><th class="cost-th" style="display:none;">계산서발행일자</th><th class="cost-th" style="display:none;">지출월</th><th class="cost-th" style="display:none;">업체명</th><th style="width:90px;">작업</th>
           </tr>
         </thead>
-        <tbody id="repairTableBody"><tr data-idx="0">
-          <td><span class="chip blue">진행중</span></td>
-          <td>1</td>
-          <td>DEMO-0001</td>
-          <td></td>
-          <td>홍길동</td>
-          <td>U10000101</td>
-          <td class="dept">GS</td>
-          <td>Single</td>
-          <td>Gerald Forceps</td>
-          <td>L21XQS</td>
-          <td>V-mueller</td>
-          <td>2026-06-25</td>
-          <td>자체</td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td style="white-space:nowrap;">
-            <button data-action="edit" style="background:#fff;border:1px solid var(--border);border-radius:6px;padding:5px 8px;font-size:11.5px;font-weight:700;">수정</button>
-            <button data-action="delete" style="background:#fff;border:1px solid var(--border);color:var(--red);border-radius:6px;padding:5px 8px;font-size:11.5px;font-weight:700;">삭제</button>
-          </td></tr><tr data-idx="1">
-          <td><span class="chip blue">진행중</span></td>
-          <td>2</td>
-          <td>DEMO-0002</td>
-          <td></td>
-          <td>이영희</td>
-          <td>U10010201</td>
-          <td class="dept">NS</td>
-          <td>Cranial #1</td>
-          <td>Bipolar Forceps</td>
-          <td>BP-220</td>
-          <td>Aesculap</td>
-          <td>2026-06-17</td>
-          <td>외주</td>
-          <td>2026-06-20</td>
-          <td></td>
-          <td></td>
-          <td style="white-space:nowrap;">
-            <button data-action="edit" style="background:#fff;border:1px solid var(--border);border-radius:6px;padding:5px 8px;font-size:11.5px;font-weight:700;">수정</button>
-            <button data-action="delete" style="background:#fff;border:1px solid var(--border);color:var(--red);border-radius:6px;padding:5px 8px;font-size:11.5px;font-weight:700;">삭제</button>
-          </td></tr><tr data-idx="2">
-          <td><span class="chip green">완료</span></td>
-          <td>3</td>
-          <td>DEMO-0003</td>
-          <td></td>
-          <td>박지민</td>
-          <td>U10020301</td>
-          <td class="dept">OS</td>
-          <td>Hand #6</td>
-          <td>Bone Rongeur</td>
-          <td>BR-77</td>
-          <td>Zimmer</td>
-          <td>2026-07-25</td>
-          <td>외주</td>
-          <td>2026-07-27</td>
-          <td>2026-08-02</td>
-          <td></td>
-          <td style="white-space:nowrap;">
-            <button data-action="edit" style="background:#fff;border:1px solid var(--border);border-radius:6px;padding:5px 8px;font-size:11.5px;font-weight:700;">수정</button>
-            <button data-action="delete" style="background:#fff;border:1px solid var(--border);color:var(--red);border-radius:6px;padding:5px 8px;font-size:11.5px;font-weight:700;">삭제</button>
-          </td></tr><tr data-idx="3">
-          <td><span class="chip green">완료</span></td>
-          <td>4</td>
-          <td>DEMO-0004</td>
-          <td></td>
-          <td>최민수</td>
-          <td>U10030401</td>
-          <td class="dept">CS</td>
-          <td>Vascular 2</td>
-          <td>DeBakey Clamp</td>
-          <td>22-0898</td>
-          <td>GEISTER</td>
-          <td>2026-07-20</td>
-          <td>외주</td>
-          <td>2026-07-22</td>
-          <td>2026-08-01</td>
-          <td></td>
-          <td style="white-space:nowrap;">
-            <button data-action="edit" style="background:#fff;border:1px solid var(--border);border-radius:6px;padding:5px 8px;font-size:11.5px;font-weight:700;">수정</button>
-            <button data-action="delete" style="background:#fff;border:1px solid var(--border);color:var(--red);border-radius:6px;padding:5px 8px;font-size:11.5px;font-weight:700;">삭제</button>
-          </td></tr><tr data-idx="4">
-          <td><span class="chip purple">수리불가</span></td>
-          <td>5</td>
-          <td>DEMO-0005</td>
-          <td></td>
-          <td>김철수</td>
-          <td>U10040501</td>
-          <td class="dept">PS</td>
-          <td>Rhinoplasty</td>
-          <td>Cottle Elevator</td>
-          <td>CE-10</td>
-          <td>Karl Storz</td>
-          <td>2026-07-15</td>
-          <td>수리불가</td>
-          <td></td>
-          <td></td>
-          <td>2026-07-30</td>
-          <td style="white-space:nowrap;">
-            <button data-action="edit" style="background:#fff;border:1px solid var(--border);border-radius:6px;padding:5px 8px;font-size:11.5px;font-weight:700;">수정</button>
-            <button data-action="delete" style="background:#fff;border:1px solid var(--border);color:var(--red);border-radius:6px;padding:5px 8px;font-size:11.5px;font-weight:700;">삭제</button>
-          </td></tr><tr data-idx="5">
-          <td><span class="chip green">완료</span></td>
-          <td>6</td>
-          <td>DEMO-0006</td>
-          <td></td>
-          <td>이영희</td>
-          <td>U10050601</td>
-          <td class="dept">OB</td>
-          <td>Pelvic #2</td>
-          <td>Uterine Forceps</td>
-          <td>UF-30</td>
-          <td>B.Braun</td>
-          <td>2026-07-29</td>
-          <td>자체</td>
-          <td></td>
-          <td>2026-08-03</td>
-          <td></td>
-          <td style="white-space:nowrap;">
-            <button data-action="edit" style="background:#fff;border:1px solid var(--border);border-radius:6px;padding:5px 8px;font-size:11.5px;font-weight:700;">수정</button>
-            <button data-action="delete" style="background:#fff;border:1px solid var(--border);color:var(--red);border-radius:6px;padding:5px 8px;font-size:11.5px;font-weight:700;">삭제</button>
-          </td></tr><tr data-idx="6">
-          <td><span class="chip blue">진행중</span></td>
-          <td>7</td>
-          <td>DEMO-0007</td>
-          <td></td>
-          <td>박지민</td>
-          <td>U10060701</td>
-          <td class="dept">URO</td>
-          <td>TURP</td>
-          <td>Resectoscope Sheath</td>
-          <td>RS-24</td>
-          <td>Olympus</td>
-          <td>2026-07-29</td>
-          <td>외주</td>
-          <td>2026-07-30</td>
-          <td></td>
-          <td></td>
-          <td style="white-space:nowrap;">
-            <button data-action="edit" style="background:#fff;border:1px solid var(--border);border-radius:6px;padding:5px 8px;font-size:11.5px;font-weight:700;">수정</button>
-            <button data-action="delete" style="background:#fff;border:1px solid var(--border);color:var(--red);border-radius:6px;padding:5px 8px;font-size:11.5px;font-weight:700;">삭제</button>
-          </td></tr><tr data-idx="7">
-          <td><span class="chip blue">진행중</span></td>
-          <td>8</td>
-          <td>DEMO-0008</td>
-          <td></td>
-          <td>최민수</td>
-          <td>U10070801</td>
-          <td class="dept">ENT</td>
-          <td>Sinus</td>
-          <td>Sinus Forceps</td>
-          <td>SF-12</td>
-          <td>Karl Storz</td>
-          <td>2026-08-01</td>
-          <td>자체</td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td style="white-space:nowrap;">
-            <button data-action="edit" style="background:#fff;border:1px solid var(--border);border-radius:6px;padding:5px 8px;font-size:11.5px;font-weight:700;">수정</button>
-            <button data-action="delete" style="background:#fff;border:1px solid var(--border);color:var(--red);border-radius:6px;padding:5px 8px;font-size:11.5px;font-weight:700;">삭제</button>
-          </td></tr><tr data-idx="8">
-          <td><span class="chip blue">진행중</span></td>
-          <td>9</td>
-          <td>DEMO-0009</td>
-          <td></td>
-          <td>김철수</td>
-          <td>U10080901</td>
-          <td class="dept">Robot</td>
-          <td>Single</td>
-          <td>Robotic Grasper</td>
-          <td>RG-8mm</td>
-          <td>Intuitive</td>
-          <td>2026-08-02</td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td style="white-space:nowrap;">
-            <button data-action="edit" style="background:#fff;border:1px solid var(--border);border-radius:6px;padding:5px 8px;font-size:11.5px;font-weight:700;">수정</button>
-            <button data-action="delete" style="background:#fff;border:1px solid var(--border);color:var(--red);border-radius:6px;padding:5px 8px;font-size:11.5px;font-weight:700;">삭제</button>
-          </td></tr></tbody>
+        <tbody id="repairTableBody"></tbody>
         <tfoot>
           <tr>
-            <td colspan="17" id="repairFootColspanCell" style="text-align:right;font-weight:700;border-top:2px solid var(--border);border-bottom:none;">총 (<span id="repairFootTotal">9</span>)건</td>
+            <td colspan="17" id="repairFootColspanCell" style="text-align:right;font-weight:700;border-top:2px solid var(--border);border-bottom:none;">총 (<span id="repairFootTotal">0</span>)건</td>
           </tr>
         </tfoot>
       </table>
       </div>
-      <div id="repairEmptyState" style="display:none;text-align:center;padding:40px 0;color:var(--text-sub);font-size:13px;">
+      <div id="repairEmptyState" style="text-align: center; padding: 40px 0px; color: var(--text-sub); font-size: 13px;">
         업로드된 수리 이력이 없습니다. 위에서 파일을 업로드하거나 직접 추가해주세요.
       </div>
     </div>
@@ -1032,7 +657,7 @@
     <div class="topbar">
       <h1>폐품 진행현황 <span class="scope-badge">전체 폐기(폐품) 이력</span></h1>
       <div class="top-right">
-        <span id="disposalCount" style="font-weight:700;color:var(--text);">총 4건</span>
+        <span id="disposalCount" style="font-weight:700;color:var(--text);">총 0건</span>
       </div>
     </div>
 
@@ -1084,83 +709,15 @@
             <th>상태</th><th>NO.</th><th>접수번호</th><th>물품코드</th><th>진료과</th><th>세트명</th><th>물품명</th><th>모델명</th><th>제조사</th><th>수량</th><th>폐기사유</th><th>재청구여부</th><th>입고일자</th><th style="width:90px;">작업</th>
           </tr>
         </thead>
-        <tbody id="disposalTableBody"><tr data-idx="0">
-          <td><span class="chip purple">진행중</span></td>
-          <td></td>
-          <td>DEMO-0005</td>
-          <td>U10040501</td>
-          <td class="dept">PS</td>
-          <td>Rhinoplasty</td>
-          <td>Cottle Elevator</td>
-          <td>CE-10</td>
-          <td>Karl Storz</td>
-          <td>1</td>
-          <td>파손</td>
-          <td></td>
-          <td></td>
-          <td style="white-space:nowrap;">
-            <button data-action="edit" style="background:#fff;border:1px solid var(--border);border-radius:6px;padding:5px 8px;font-size:11.5px;font-weight:700;">수정</button>
-            <button data-action="delete" style="background:#fff;border:1px solid var(--border);color:var(--red);border-radius:6px;padding:5px 8px;font-size:11.5px;font-weight:700;">삭제</button>
-          </td></tr><tr data-idx="1">
-          <td><span class="chip purple">진행중</span></td>
-          <td>1</td>
-          <td>DEMO-D001</td>
-          <td>U10010202</td>
-          <td class="dept">NS</td>
-          <td>Cranial #1</td>
-          <td>Micro Scissors</td>
-          <td>MC-15</td>
-          <td>Aesculap</td>
-          <td>1</td>
-          <td>Tip 마모</td>
-          <td>재청구예정</td>
-          <td></td>
-          <td style="white-space:nowrap;">
-            <button data-action="edit" style="background:#fff;border:1px solid var(--border);border-radius:6px;padding:5px 8px;font-size:11.5px;font-weight:700;">수정</button>
-            <button data-action="delete" style="background:#fff;border:1px solid var(--border);color:var(--red);border-radius:6px;padding:5px 8px;font-size:11.5px;font-weight:700;">삭제</button>
-          </td></tr><tr data-idx="2">
-          <td><span class="chip red">영구감소</span></td>
-          <td>2</td>
-          <td>DEMO-D002</td>
-          <td>U10080901</td>
-          <td class="dept">Robot</td>
-          <td>Single</td>
-          <td>Robotic Grasper</td>
-          <td>RG-8mm</td>
-          <td>Intuitive</td>
-          <td>1</td>
-          <td>노후화</td>
-          <td>영구감소</td>
-          <td></td>
-          <td style="white-space:nowrap;">
-            <button data-action="edit" style="background:#fff;border:1px solid var(--border);border-radius:6px;padding:5px 8px;font-size:11.5px;font-weight:700;">수정</button>
-            <button data-action="delete" style="background:#fff;border:1px solid var(--border);color:var(--red);border-radius:6px;padding:5px 8px;font-size:11.5px;font-weight:700;">삭제</button>
-          </td></tr><tr data-idx="3">
-          <td><span class="chip green">완료</span></td>
-          <td>3</td>
-          <td>DEMO-D003</td>
-          <td>U10090001</td>
-          <td class="dept">공용</td>
-          <td>General</td>
-          <td>Basic Retractor</td>
-          <td>BR-100</td>
-          <td>Symmetry</td>
-          <td>2</td>
-          <td>Handle 파손</td>
-          <td>재청구예정</td>
-          <td>2026-08-03</td>
-          <td style="white-space:nowrap;">
-            <button data-action="edit" style="background:#fff;border:1px solid var(--border);border-radius:6px;padding:5px 8px;font-size:11.5px;font-weight:700;">수정</button>
-            <button data-action="delete" style="background:#fff;border:1px solid var(--border);color:var(--red);border-radius:6px;padding:5px 8px;font-size:11.5px;font-weight:700;">삭제</button>
-          </td></tr></tbody>
+        <tbody id="disposalTableBody"></tbody>
         <tfoot>
           <tr>
-            <td colspan="14" style="text-align:right;font-weight:700;border-top:2px solid var(--border);border-bottom:none;">총 (<span id="disposalFootTotal">4</span>)건</td>
+            <td colspan="14" style="text-align:right;font-weight:700;border-top:2px solid var(--border);border-bottom:none;">총 (<span id="disposalFootTotal">0</span>)건</td>
           </tr>
         </tfoot>
       </table>
       </div>
-      <div id="disposalEmptyState" style="display:none;text-align:center;padding:40px 0;color:var(--text-sub);font-size:13px;">
+      <div id="disposalEmptyState" style="text-align: center; padding: 40px 0px; color: var(--text-sub); font-size: 13px;">
         업로드된 폐기 이력이 없습니다. 위에서 파일을 업로드하거나 직접 추가해주세요.
       </div>
     </div>
@@ -1414,24 +971,6 @@
             <input type="file" id="settingsLogoInput" accept="image/*" style="display:none;">
           </label>
         </div>
-      </div>
-    </div>
-
-    <!-- 접속 비밀번호 변경 -->
-    <div class="panel" style="margin-bottom:18px;">
-      <div class="panel-head">
-        <div>
-          <h2>접속 비밀번호 변경</h2>
-          <div class="sub">팀 전체가 공유하는 대시보드 접속 비밀번호입니다. 변경하면 다음 접속부터 새 비밀번호로 로그인해야 합니다.</div>
-        </div>
-      </div>
-      <div style="display:flex;gap:12px;align-items:flex-end;flex-wrap:wrap;">
-        <div>
-          <label style="display:block;font-size:12px;color:var(--text-sub);font-weight:700;margin-bottom:6px;">새 비밀번호</label>
-          <input type="text" id="settingsNewPassword" placeholder="새 비밀번호 입력" style="width:220px;padding:8px 10px;border:1px solid var(--border);border-radius:8px;font-size:13px;">
-        </div>
-        <button id="settingsChangePwBtn" style="background:#fff;border:1px solid var(--border);color:var(--text);font-weight:700;font-size:12.5px;padding:9px 16px;border-radius:9px;">비밀번호 변경</button>
-        <span id="settingsPwStatus" style="font-size:12.5px;color:var(--green);"></span>
       </div>
     </div>
 
@@ -1719,34 +1258,17 @@ if(!window.storage){
 </script>
 
 <script>
-// ---- 접속 비밀번호 게이트 (매번 새로 입력 필요, 잠금해제 상태를 저장하지 않음) ----
+// ---- 접속 비밀번호 게이트 (고정 비밀번호, 매번 새로 입력 필요) ----
 (function(){
-  const PW_KEY = 'access-password';
-  const DEFAULT_PW = 'cau2026';
+  const FIXED_PW = '1537';
 
   const gate = document.getElementById('accessGate');
   const pwInput = document.getElementById('accessGatePw');
   const errorEl = document.getElementById('accessGateError');
   const okBtn = document.getElementById('accessGateBtn');
 
-  async function getCurrentPassword(){
-    try{
-      if(window.storage){
-        const res = await window.storage.get(PW_KEY, false);
-        if(res && res.value) return res.value;
-      }
-    }catch(e){ /* 저장된 비밀번호 없음: 기본값 사용 */ }
-    return DEFAULT_PW;
-  }
-
-  window.setAccessPassword = function(newPw){
-    try{ if(window.storage) window.storage.set(PW_KEY, newPw, false).catch(()=>{}); }catch(e){}
-  };
-
-  async function tryUnlock(){
-    const entered = pwInput.value;
-    const correct = await getCurrentPassword();
-    if(entered === correct){
+  function tryUnlock(){
+    if(pwInput.value === FIXED_PW){
       gate.style.display = 'none';
       errorEl.style.display = 'none';
     }else{
@@ -2441,20 +1963,6 @@ if(!window.storage){
       document.getElementById('settingsLogoPreview').src = pendingLogoDataUrl;
     };
     reader.readAsDataURL(file);
-  });
-
-  document.getElementById('settingsChangePwBtn').addEventListener('click', function(){
-    const pwInput = document.getElementById('settingsNewPassword');
-    const newPw = pwInput.value.trim();
-    const statusEl = document.getElementById('settingsPwStatus');
-    if(!newPw){
-      window.customAlert('새 비밀번호를 입력해주세요.');
-      return;
-    }
-    if(window.setAccessPassword) window.setAccessPassword(newPw);
-    pwInput.value = '';
-    statusEl.textContent = '비밀번호가 변경되었습니다.';
-    setTimeout(() => { statusEl.textContent = ''; }, 3000);
   });
 
   document.getElementById('settingsSaveBtn').addEventListener('click', function(){
