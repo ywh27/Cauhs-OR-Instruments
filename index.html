@@ -1,7 +1,10 @@
 <!DOCTYPE html>
-<!-- saved from url=(0078)file:///C:/Users/Administrator/Downloads/surgical-instrument-dashboard_10.html -->
+<!-- saved from url=(0078)file:///C:/Users/Administrator/Downloads/surgical-instrument-dashboard_11.html -->
 <html lang="ko"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="0">
 <title>수술실 기구 관리 대시보드</title>
 <style>
   :root{
@@ -287,7 +290,7 @@
 <body>
 
   <!-- ===================== 접속 비밀번호 게이트 ===================== -->
-  <div id="accessGate" style="display: none; position: fixed; inset: 0px; background: var(--navy); z-index: 999999; align-items: center; justify-content: center; flex-direction: column;">
+  <div id="accessGate" style="display:flex;position:fixed;inset:0;background:var(--navy);z-index:999999;align-items:center;justify-content:center;flex-direction:column;">
     <div style="width:34px;height:34px;border-radius:9px;background:linear-gradient(135deg,var(--blue),var(--indigo));display:flex;align-items:center;justify-content:center;font-size:16px;margin-bottom:16px;">🏥</div>
     <div style="color:#fff;font-weight:800;font-size:16px;margin-bottom:4px;">중앙대학교광명병원</div>
     <div style="color:#8892B0;font-size:12.5px;margin-bottom:22px;">수술실 (OR) 기구 관리</div>
@@ -354,7 +357,7 @@
         </div>
         <button id="loadDemoBtn" style="background:#fff;border:1px solid var(--border);color:var(--text);font-weight:700;font-size:12.5px;padding:8px 14px;border-radius:9px;cursor:pointer;">🧪 데모 데이터 불러오기</button>
         <div class="icon-btn" id="refreshBtn" onclick="refreshMainDashboard()" title="새로고침" style="cursor: pointer; transition: none; transform: rotate(0deg);">🔄</div>
-        <span id="lastUpdatedLabel">최근 업데이트: 2026.08.04 16:25</span>
+        <span id="lastUpdatedLabel">최근 업데이트: 2026.08.04 16:31</span>
         <div class="date-range">📅 2025.07.16 ~ 2025.07.23 ⌄</div>
       </div>
     </div>
@@ -1281,6 +1284,16 @@ if(!window.storage){
   okBtn.addEventListener('click', tryUnlock);
   pwInput.addEventListener('keydown', function(e){
     if(e.key === 'Enter') tryUnlock();
+  });
+
+  // 뒤로가기/앞으로가기 등으로 페이지가 캐시에서 복원될 때(bfcache) 다시 잠그기
+  window.addEventListener('pageshow', function(e){
+    if(e.persisted){
+      gate.style.display = 'flex';
+      errorEl.style.display = 'none';
+      pwInput.value = '';
+      pwInput.focus();
+    }
   });
 
   setTimeout(() => pwInput.focus(), 100);
